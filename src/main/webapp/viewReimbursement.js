@@ -1,6 +1,6 @@
 window.onload = function () {
-	sendAjaxGet("http://localhost:8080/project1/SessionServlet", getEmployee);
-	sendAjaxGet("http://localhost:8080/project1/GetManagerServlet", setManagerList);
+	sendAjaxGet("http://52.87.234.62:8080/projectOne/SessionServlet", getEmployee);
+	sendAjaxGet("http://52.87.234.62:8080/projectOne/GetManagerServlet", setManagerList);
 }
 
 var table = document.getElementById("userTable");
@@ -37,9 +37,9 @@ function populateUser(xhr) {
 		reimbursementList = response;
 	}
 	
-	sendAjaxGet("http://localhost:8080/project1/GetAllEmployees", setEmployeeList);
+	sendAjaxGet("http://52.87.234.62:8080/projectOne/GetAllEmployees", setEmployeeList);
 	// else {
-	// 	window.location = "http://localhost:8080/project1/LoginServlet";
+	// 	window.location = "http://52.87.234.62:8080/projectOne/LoginServlet";
 	// }
 }
 
@@ -59,9 +59,9 @@ function setManagerList(xhr) {
 		console.log("setManagerList " + managerList);
 
 		// if (isManager) {
-		sendAjaxGet("http://localhost:8080/project1/GetAllReimbursement", populateUser);
+		sendAjaxGet("http://52.87.234.62:8080/projectOne/GetAllReimbursement", populateUser);
 		// } else {
-		// 	sendAjaxGet("http://localhost:8080/project1/GetReimbursementById", populateUser);
+		// 	sendAjaxGet("http://52.87.234.62:8080/projectOne/GetReimbursementById", populateUser);
 		// }
 	}
 }
@@ -152,7 +152,7 @@ function addToTable(response) {
 			if (getReportsTo(reimbursementList[this.parentNode.parentNode.rowIndex - 1].employeeId) != employeeId && employeeId != 0) {
 				window.location.replace("PermissionDenied.html");
 			} else {
-				sendAjaxPost("http://localhost:8080/project1/UpdateRequestServlet", { reimbursementId: this.value, status: 2, managerId: employeeId }, postFunction)
+				sendAjaxPost("http://52.87.234.62:8080/projectOne/UpdateRequestServlet", { reimbursementId: this.value, status: 2, managerId: employeeId }, postFunction)
 			}
 		});
 		var denyButton = document.createElement("button");
@@ -165,7 +165,7 @@ function addToTable(response) {
 			if (getReportsTo(reimbursementList[this.parentNode.parentNode.rowIndex - 1].employeeId) != employeeId && employeeId != 0) {
 				window.location.replace("PermissionDenied.html");
 			} else {
-				sendAjaxPost("http://localhost:8080/project1/UpdateRequestServlet", { reimbursementId: this.value, status: 1, managerId: employeeId }, postFunction)
+				sendAjaxPost("http://52.87.234.62:8080/projectOne/UpdateRequestServlet", { reimbursementId: this.value, status: 1, managerId: employeeId }, postFunction)
 			}
 		});
 		if (response[i].status == 0) {

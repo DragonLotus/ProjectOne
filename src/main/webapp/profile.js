@@ -1,5 +1,5 @@
 window.onload = function(){
-	sendAjaxGet("http://localhost:8080/project1/SessionServlet", getEmployee);
+	sendAjaxGet("http://52.87.234.62:8080/projectOne/SessionServlet", getEmployee);
 }
 
 var nameForm = document.getElementById("nameForm");

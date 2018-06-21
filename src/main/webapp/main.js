@@ -1,4 +1,4 @@
-sendAjaxGet("http://localhost:8082/project1/SessionServlet", populateUser);
+sendAjaxGet("http://52.87.234.62:8080/projectOne/SessionServlet", populateUser);
 
 function sendAjaxGet(url, func){
 	let xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft.HTTPRequest");
@@ -16,6 +16,6 @@ function populateUser(xhr){
 	if ( response.username != "null" ){
 		document.getElementById("welcome").innerHTML = "Welcome, "+ response.username + ".";
 	} else {
-		window.location = "http://localhost:8082/project1/LoginServlet";
+		window.location = "http://52.87.234.62:8080/projectOne/LoginServlet";
 	}
 }

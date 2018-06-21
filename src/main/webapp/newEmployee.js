@@ -1,5 +1,5 @@
 window.onload = function(){
-	sendAjaxGet("http://localhost:8080/project1/GetManagerServlet", populateUser);
+	sendAjaxGet("http://52.87.234.62:8080/projectOne/GetManagerServlet", populateUser);
 }
 
 function sendAjaxGet(url, func){
@@ -27,6 +27,6 @@ function populateUser(xhr){
 		}
 	} 
 	// else {
-	// 	window.location = "http://localhost:8080/project1/LoginServlet";
+	// 	window.location = "http://52.87.234.62:8080/projectOne/LoginServlet";
 	// }
 }
